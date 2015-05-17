@@ -74,10 +74,10 @@ $articles = load_articles_from_db($db);
 	<body>
 		<h1>My PHP Blog</h1>
 
-        <div id="table_of_contents">
 <?php
     if (count($articles) > 0) {
 ?>
+        <div id="table_of_contents">
             <h2>Posts</h2>
 
             <ul>
