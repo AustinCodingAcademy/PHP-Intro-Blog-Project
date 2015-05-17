@@ -1,0 +1,90 @@
+body {
+    font-family: sans-serif;
+    margin-bottom: 20em;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.3;
+}
+
+h1 {
+    font-size: 400%;
+    font-weight: normal;
+    text-align: center;
+}
+h2 {
+    font-size: 250%;
+    font-weight: normal;
+}
+
+.link-format {
+    color: blue;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+#table_of_contents, .article, #article_form {
+    padding: 2em;
+    margin: 1em;
+}
+#table_of_contents h2, #article_form h2, .article_title {
+    margin-top: 0;
+}
+
+#table_of_contents {
+    background: #eeeefa;
+}
+#table_of_contents h2 {
+    margin-bottom: 0;
+}
+#table_of_contents ul {
+    margin-bottom: 0;
+}
+#table_of_contents li {
+    margin-top: .4em;
+    margin-bottom: .4em;
+    list-style-type: none;
+}
+
+.article {
+    background: #eee;
+}
+
+.article_title {
+    margin-bottom: .3em;
+}
+.byline {
+    margin-top: 0;
+    font-size: 80%;
+}
+.actions {
+    margin-top: .5em;
+    font-size: 60%;
+}
+.article_content {
+    margin-top: 1em;
+    margin-bottom: .6em;
+}
+
+#article_form {
+    background: #eefaee;
+}
+#article_form.editing_article {
+    background: #faeeee;
+}
+#article_form .form_row {
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+#article_form textarea {
+    width: 100%;
+    height: 10em;
+}
+#article_form input[name=author] {
+    min-width: 40%;
+}
+#article_form input[name=title] {
+    min-width: 80%;
+    font-size: 170%;
+}
+
