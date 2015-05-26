@@ -13,53 +13,66 @@ PHP Intro Course Syllabus
     * Mention escaping characters: `'Here\'s an example.'`
     * Do an example involving integer arithmetic
     * BRIEF intro to Database: show them a `SELECT` query and an `INSERT` query, but they don't have to "get it" yet
+* **Day 3: Arrays
+    * Uses of arrays
+    * Creating arrays
+    * Adding new items to an array
+    * Simple loop example that displays the contents of an array
+* **Day 4: Built-in Functions
+    * Definition of a function, relationship to math, diagram of what a function does
+    * String processing functions (`strtolower`, `strtoupper`, `strlen`, `trim`, etc)
+    * Array functions (`array_sum`, `array_replace`, `sort`)
+* **Day 5: More Control Flow: Conditionals and Loops
+    * Decision making with `if`
+    * The classic loops: `while`, `do...while`, and `for`
+* **Day 6: More Loops
+    * `foreach` loop
+    * How foreach relates to arrays
+* **Day 7: Code Reuse: `include`, `require_once`, and user-defined functions
+    * `include`: "copy and paste" another file into your code
+    * `require_once`: same as `include`, but make sure there's no duplicates
+    * Syntax for creating your own functions
+* **Day 8: Creating your own functions in-depth
+    * Return values
+    * Passing parameters to your own functions
+    * Value and reference parameters
+* **Day 9: Into to Object-Oriented Programming (OOP): Classes and Objects
+    * Compare classes to built-in data types
+    * Explain classes as a way to create your own data types
+    * Methods
+* **Day 10: OOP 2: Classes and Objects continued
+    * Member variables
+    * OOP Principles: Encapsulation and Inheritance
+* **Day 11: Introduce Final Project and Databases
+    * Intro to Blogs and brainstorm functionality that a blog would need
+    * Connecting to a database
+* **Day 12: Databases: `SELECT` and `INSERT`
+    * `SELECT`: Retrieving data from the database
+    * `INSERT`: Adding new information to the database
+* **Day 13: Databases: `UPDATE` and `DELETE`
+    * `UPDATE`: Changing a record stored in the database
+    * `DELETE`: Removing information from the database
+* **Day 14: Databases: `CREATE TABLE`
+    * Explain that we've already used tables: `aca_article` is one
+    * How to create your own tables
+    * Inserting data into your own tables
+* **Day 15: Project Workday
+* **Day 16: Using Web Services: APIs
+    * GET and POST
+    * Endpoints and passing parameters
+    * Retrieving and dealing with results
+* **Day 17: APIs: Twilio
+    * Signing up for web services: pricing models, what to watch out for
+    * Sending a text
+* **Day 18: APIs: Google Maps
+    * Intro to JavaScript: code that runs in your browser
+    * Longitude and latitude
+    * Markers
+    * Retrieving place information
+* **Day 19: Project Workday
+* **Day 20: Finish Final Project and "Something Different"
+    * Help students finish the final project and fix any final bugs.
+    * Answer any open-ended or advanced questions that students may have
+    * Suggest topics for further study and talk about cool things going on in computing
 
 
-
-# Intended Syllabus for last time #
-
-* Day 1: Intro to Computers, Programming, and This Course
-* Day 2: Values, Variables and Expressions
-* Day 3: Numbers, Text and Strings
-* Day 4: Arrays
-* Day 5: Control Flow Overview: Conditionals, Loops and Functions
-* Day 6: Conditionals: if/else and switch/case
-* Day 7: Loops: for/foreach and while
-* Day 8: Code Reuse: include, require and function
-* Day 9: Code Reuse 2: Functions In-Depth
-* Day 10: Into to Object-Oriented Programming (OOP): Classes and Objects
-* Day 11: OOP 2: Classes and Objects continued
-* Day 12: How To Use Other People's Code (also, Start Final Project)
-* Day 13: Intro to Databases / MySQL
-* Day 14: Making Web Requests and Using APIs
-* Day 15: Databases: Asking for Data with SELECT
-* Day 16: APIs 2: Case Study - Trello API
-* Day 17: Databases: Changing Data with INSERT AND UPDATE
-* Day 18: APIs 3: Case Study - Google Maps API
-* Day 19: Databases: Creating New Tables and Adding Fields
-* Day 20: Finish Final Project
-
-# How far we actually got last time (Approximate) #
-
-* Day 1: Intro to Computers, Programming, and This Course
-* Day 2: Values, Variables and Expressions
-* Day 3: Numbers, Text and Strings, very basic HTML
-* Day 4: Introduce Arrays and `foreach`
-* Day 5: Conditionals and kept going on `foreach`.  Talked more about HTML and introduced CSS.
-* Day 6: Conditionals and kept doing examples of `foreach`. Introduced `include`
-* Day 7: More `foreach`, maybe did a `for` example too
-* Day 8: Introduced functions, kept going on conditional examples and `foreach`
-* Day 9: Kept talking about functions, did several examples.  Talked about difference between `function` and `include`: both examples of Code Reuse, but `function` is safer.
-* Day 10: Introduced Blog Project (no demo, just started creating the HTML first)
-* Day 11: Refined our HTML for the Blog Project, talked about how we could use arrays and `foreach` to make it dynamic
-* Day 12: Create a nested array of Articles with "Title", "Date", "Author" and "Content" keys.  Used a `foreach` to show all the article content from the array instead of having it hard-coded into the HTML
-* Day 13: Learned how to use `serialize` and `unserialize` along with `file_put_contents` and `file_get_contents` to store our Articles.  Created functions for saving and loading the whole array of articles into a file called `articles.file`
-* Day 14: Continued to tweak our Article functionality, including a Form to create a New Article.  Intro to Forms, $_GET and $_POST.
-* Day 15: Blog Project: new form for Edit Article functionality, continued explaining Forms, and integrating our Forms with our save/load functionality.
-* Day 16: Blog Project: Edit Article functionality, created rudimentary Delete functionality
-* Day 17: Intro to Javascript to make a Popup asking "Are you sure?" when you delete a Post
-* Day 18: Continued explaining the Javascript, helped people finish their Edit and Delete functionality
-* Day 19: Intro to Databases / MySQL, started applying DB to Blog Project
-* Day 20: Continued Database stuff, tried to teach them as much as possible, didn't fully integrate Blog with DB
-    * End of course: everyone had a working Blog Project which they showed me.  Everyone passed.
-    * Some students continued to correspond with me to learn more about how to use the DB for their blog instead of serializing to a file
