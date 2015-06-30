@@ -2,7 +2,13 @@
 
 1. Write a program that uses `echo` and the `.` operator to display a number and a word in one line of code.
 
+<?php
+echo "any word" . 23;
+?>
+
 2. What does the `$` character mean in PHP?
+
+
 
 3. True or false:
     - The value of a variable can never be changed.

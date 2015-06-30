@@ -1,0 +1,462 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<style>
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote {
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family: "Helvetica Neue", Helvetica, "Hiragino Sans GB", Arial, sans-serif;
+    font-size: 13px;
+    line-height: 18px;
+    color: #737373;
+    background-color: white;
+    margin: 10px 13px 10px 13px;
+}
+table {
+	margin: 10px 0 15px 0;
+	border-collapse: collapse;
+}
+td,th {	
+	border: 1px solid #ddd;
+	padding: 3px 10px;
+}
+th {
+	padding: 5px 10px;	
+}
+
+a {
+    color: #0069d6;
+}
+a:hover {
+    color: #0050a3;
+    text-decoration: none;
+}
+a img {
+    border: none;
+}
+p {
+    margin-bottom: 9px;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: #404040;
+    line-height: 36px;
+}
+h1 {
+    margin-bottom: 18px;
+    font-size: 30px;
+}
+h2 {
+    font-size: 24px;
+}
+h3 {
+    font-size: 18px;
+}
+h4 {
+    font-size: 16px;
+}
+h5 {
+    font-size: 14px;
+}
+h6 {
+    font-size: 13px;
+}
+hr {
+    margin: 0 0 19px;
+    border: 0;
+    border-bottom: 1px solid #ccc;
+}
+blockquote {
+    padding: 13px 13px 21px 15px;
+    margin-bottom: 18px;
+    font-family:georgia,serif;
+    font-style: italic;
+}
+blockquote:before {
+    content:"\201C";
+    font-size:40px;
+    margin-left:-10px;
+    font-family:georgia,serif;
+    color:#eee;
+}
+blockquote p {
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 18px;
+    margin-bottom: 0;
+    font-style: italic;
+}
+code, pre {
+    font-family: Monaco, Andale Mono, Courier New, monospace;
+}
+code {
+    background-color: #fee9cc;
+    color: rgba(0, 0, 0, 0.75);
+    padding: 1px 3px;
+    font-size: 12px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+}
+pre {
+    display: block;
+    padding: 14px;
+    margin: 0 0 18px;
+    line-height: 16px;
+    font-size: 11px;
+    border: 1px solid #d9d9d9;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+pre code {
+    background-color: #fff;
+    color:#737373;
+    font-size: 11px;
+    padding: 0;
+}
+sup {
+    font-size: 0.83em;
+    vertical-align: super;
+    line-height: 0;
+}
+* {
+	-webkit-print-color-adjust: exact;
+}
+@media screen and (min-width: 914px) {
+    body {
+        width: 854px;
+        margin:10px auto;
+    }
+}
+@media print {
+	body,code,pre code,h1,h2,h3,h4,h5,h6 {
+		color: black;
+	}
+	table, pre {
+		page-break-inside: avoid;
+	}
+}
+</style>
+<title>Notes from Class, Day 2 (Thu Jun 4 2015)</title>
+
+</head>
+<body>
+<h1>Notes from Class, Day 2 (Thu Jun 4 2015)</h1>
+
+<h2>Intro to Databases and MySQL</h2>
+
+<p>A <strong>database</strong> is a place where you can store <em>structured</em>, <em>persistent</em> data.</p>
+
+<ul>
+<li><em>Structured</em> in that the data is stored in tables and fields that can be
+linked to each other and are in a consistent format.</li>
+<li><em>Persistent</em> in that the data lasts beyond the life of your current
+web request, and even stays around if you server reboots.</li>
+</ul>
+
+
+<p>We talk to the database using <strong>queries</strong>:</p>
+
+<ul>
+<li><p><strong>SELECT query</strong> - gets rows from the database:</p>
+
+<pre><code>  SELECT * FROM customer WHERE name = "John";
+</code></pre></li>
+<li><p><strong>INSERT query</strong> - gets rows from the database:</p>
+
+<pre><code>  INSERT INTO customer (name, email) VALUES ("Shirley", "shirley@gmail.com");
+</code></pre></li>
+<li><p><strong>UPDATE query</strong> - change rows in the database:</p>
+
+<pre><code>  UPDATE customer SET name="Jon" WHERE name="John" AND customer_id=1;
+</code></pre></li>
+<li><p><strong>DELETE query</strong> - delete rows from the database:</p>
+
+<pre><code>  DELETE FROM customer WHERE customer_id = 5
+</code></pre></li>
+</ul>
+
+
+<h2>Switch/case as an alternative to if/else</h2>
+
+<p>We talked about <code>if</code> last time.  Often you need to test a lot
+of values for the same variable.  For instance:</p>
+
+<pre><code>&lt;?php
+$var = rand(1, 10);
+if ($var == 0) {
+    echo "do this&lt;br&gt;";
+}
+elseif ($var == 1) {
+    echo "do that&lt;br&gt;";
+}
+elseif ($var == 2) {
+    echo "do the other&lt;br&gt;";
+}
+elseif ($var == 3) {
+    echo "do the other other&lt;br&gt;";
+}
+else {
+    echo "We didn't handle this case!&lt;br&gt;";
+}
+?&gt;
+</code></pre>
+
+<p>That can get annoying to keep having to type  <code>elseif</code> and <code>$var == (whatever)</code>!
+PHP does have another option, called <code>switch</code>:</p>
+
+<pre><code>&lt;?php
+$var = rand(1, 10);
+switch($var) {
+    case 0:
+        echo "do this&lt;br&gt;";
+        break;
+    case 1:
+        echo "do that&lt;br&gt;";
+        break;
+    case 2:
+        echo "do the other&lt;br&gt;";
+        break;
+    case 3:
+        echo "do the other other&lt;br&gt;";
+        break;
+    default:
+        echo "We didn't handle this case!&lt;br&gt;";
+        break;
+}
+?&gt;
+</code></pre>
+
+<p>(It's often about the same amount of typing, but it's still useful sometimes.
+And it's important to know what all these terms mean because sometimes you
+have to look at other people's code!)</p>
+
+<h2>Falling Through</h2>
+
+<p>The <code>break</code> tells it to stop running and exit the <code>switch</code> statement.
+In <code>switch</code>, you can put multiple cases together without a <code>break</code>,
+and they will "fall through":</p>
+
+<pre><code>&lt;?php
+$var = rand(1, 10);
+switch($var) {
+    case 0:
+        echo "it's 0&lt;br&gt;";
+        break;
+
+    case 1:
+    case 2:
+    case 3:
+        echo "it's 1, 2 or 3&lt;br&gt;";
+        break;
+
+    default:
+        echo "We didn't handle this case!&lt;br&gt;";
+        break;
+}
+?&gt;
+</code></pre>
+
+<h2>An example using switch/case</h2>
+
+<p>Let's say we want to take the major/degree a user is studying, and tell them how many credits
+it takes to complete that major?  We could use <code>switch</code> like this:</p>
+
+<pre><code>&lt;?php
+switch ($degree) {
+    case "Marketing":
+        echo "120 credits";
+        break;
+    case "Electrical Engineering":
+        echo "130 credits";
+        break;
+    case "Math":
+        echo "110 credits";
+        break;
+    case "Chemistry":
+        echo "120 credits";
+        break;
+}
+?&gt;
+</code></pre>
+
+<h1>Arrays</h1>
+
+<p><strong>Arrays</strong> are a special type of variable that allows us to store more that one thing in a list.
+For example, we could store the names of the degree plans we were talking about before:</p>
+
+<pre><code>&lt;?php
+$degrees = array('Marketing', 'Electrical Engineering', 'Math', 'Chemistry');
+?&gt;
+</code></pre>
+
+<h2>print_r()</h2>
+
+<p>PHP has a cool function called <code>print_r()</code> that allows us to display what's in an array.
+We can't use <code>echo</code> because that's just for singular variables.</p>
+
+<pre><code>&lt;?php
+print_r($degrees);
+?&gt;
+</code></pre>
+
+<p>This shows the output of the whole array:</p>
+
+<pre><code>Array ( [0] =&gt; Marketing [1] =&gt; Electrical Engineering [2] =&gt; Math [3] =&gt; Chemistry)
+</code></pre>
+
+<p>It looks a little jumbly, but if you View Source in your browser you can see that it actually
+has some newlines and indentation:</p>
+
+<pre><code>Array
+(
+    [0] =&gt; Marketing
+    [1] =&gt; Electrical Engineering
+    [2] =&gt; Math
+    [3] =&gt; Chemistry
+)
+</code></pre>
+
+<p>HTML collapses all the whitespace to a single space, making it look all jumbly on one line.</p>
+
+<p>If you don't want to have to View Source (you want to see it nicely formatted directly in your
+Web Page), you can enclose the result in <code>&lt;pre&gt;</code> HTML tags to keep HTML from collapsing the
+whitespace:</p>
+
+<pre><code>&lt;?php
+echo '&lt;pre&gt;';
+print_r($degrees);
+echo '&lt;/pre&gt;';
+?&gt;
+</code></pre>
+
+<p>(Or another way to type the same thing):</p>
+
+<pre><code>&lt;pre&gt;
+    &lt;?php print_r($degrees); ?&gt;
+&lt;/pre&gt;
+</code></pre>
+
+<h2>Getting Items from Arrays</h2>
+
+<p>We can get the individual items out of our array using square brackets <code>[]</code>.  In computer science,
+everything starts at 1 instead of 0, so the first item in our array is <code>$array[0]</code>.</p>
+
+<pre><code>&lt;?php
+echo $degrees[0]; // "Marketing"
+echo $degrees[2]; // "Math"
+?&gt;
+</code></pre>
+
+<h2>Loops example: Making our own print_r</h2>
+
+<p><code>print_r()</code> is useful, but what if you didn't want it in that particular format?
+You could also print out all the items in an array using a loop.
+Here's an example that prints each degree neatly on its own line using a <code>for</code> loop:</p>
+
+<pre><code>&lt;?php
+$degrees = array('Marketing', 'Electrical Engineering', 'Math', 'Chemistry');
+for($k = 0; $k &lt;= 3; $k++) {
+    echo "$degrees[$k]&lt;br&gt;";
+}
+?&gt;
+</code></pre>
+
+<p>But there's a problem here.  We specifically went from 0 to 3... what if we added a new degree?</p>
+
+<pre><code>&lt;?php
+$degrees = array('Marketing', 'Electrical Engineering', 'Math', 'Chemistry', 'Computer Science');
+for($k = 0; $k &lt;= 3; $k++) {
+    echo "$degrees[$k]&lt;br&gt;";
+}
+?&gt;
+</code></pre>
+
+<h2>Not hard-coding the number of items</h2>
+
+<p>This leaves off the last degree, Computer Science.  Instead of hardcoding the 3,
+we can use the <code>count</code> function to get the number of items in the array:</p>
+
+<pre><code>&lt;?php
+$degrees = array('Marketing', 'Electrical Engineering', 'Math', 'Chemistry', 'Computer Science');
+for($k = 0; $k &lt; count($degrees); $k++) {
+    echo "$degrees[$k]&lt;br&gt;";
+}
+?&gt;
+</code></pre>
+
+<h2>Foreach loops</h2>
+
+<p>There's an even shorter way, using a new kind of loop, <code>foreach</code>:</p>
+
+<pre><code>&lt;?php
+$degrees = array('Marketing', 'Electrical Engineering', 'Math', 'Chemistry', 'Computer Science');
+foreach ($degrees as $degree) {
+    echo "$degree&lt;br&gt;";
+}
+?&gt;
+</code></pre>
+
+<p>This last <code>foreach</code> loop runs all the way through <code>$degrees</code>, assigns each individual
+item to <code>$degree</code>, and as it does so, runs the code in the loop, once for each value.</p>
+
+<h2>Adding items to arrays</h2>
+
+<p>You can also add items to arrays once they've been made:</p>
+
+<p>&lt;?php
+    $degrees[] = "Biology";
+?></p>
+
+<h2>Associative Arrays</h2>
+
+<p>Associative arrays can make associations between values instead of just storing a list of
+values.  This is an extremely useful feature of PHP.  For example, we could now store
+the credit hours information from our earlier example instead of just listing the degrees:</p>
+
+<pre><code>&lt;?php
+$degrees = array("Marketing" =&gt; 120,
+                 "Electrical Engineering" =&gt; 130,
+                 "Math" =&gt; 110,
+                 "Chemistry" =&gt; 120,
+                 "Computer Science" =&gt; 100);
+?&gt;
+</code></pre>
+
+<p>Now let's run through them with <code>foreach</code>:</p>
+
+<pre><code>foreach ($degrees as $deg =&gt; $hours) {
+    echo "$deg takes $hours hours!&lt;br&gt;";
+}
+</code></pre>
+
+<p>We call the thing on the left some of the arrow (<code>=&gt;</code>) the <strong>keys</strong> and the thing on the right
+side the <strong>values</strong>.  Not the new <code>foreach</code> syntax using the array to get both keys
+and values.</p>
+
+<h2>Adding items to associative arrays</h2>
+
+<p>When you add an item to an associative array, make sure to give it both a new key
+and a new value.</p>
+
+<pre><code>&lt;?php
+    $degrees["Biology"] = 150;
+?&gt;
+</code></pre>
+</body>
+</html>
