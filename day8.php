@@ -10,10 +10,22 @@
 // combineStrings('pneumonoultramicroscopicsilicovolcanoconiosis', 'what') should
 // return 'whatpneumonoultramicroscopicsilicovolcanoconiosiswhat'.
 
+function combineStrings($a, $b) {
+  if (strlen($a) > strlen($b)) {
+    echo $b . $a . $b;
+  } else {
+    echo $a . $b . $a;
+  }
+}
+
 // Databases
 // Review: A place where you can store structured and persistent data
 //             - Structured: the data is stored in tables with columns, which are
 //                           defined in a specific format called a schema
+// More formally: the schema is the set of tables and their columns.
+// for example, the schema of the 'aca' database is a table called 'customers'
+// which has 4 columns: id, firstname, lastname, and phonenumber.
+
 //             - Persistent: the data lives on your server, and so it lasts beyond
 //                           the life of the current web request. It even stays
 //                           around if your server restarts.
@@ -31,7 +43,7 @@
 // 3. mysql -u root -proot
 
 // CREATE DATABASE intro_to_php;
-// CREATE TABLE todo_list (id INT NOT NULL AUTO_INCREMENT, item TEXT, 
+// CREATE TABLE todo_list (id INT AUTO_INCREMENT, item TEXT, 
 //                         PRIMARY KEY(id));
 
 // Using this stuff from PHP
@@ -46,6 +58,7 @@ $db = new mysqli("localhost", "root", "root", "intro_to_php");
 if ($db->connect_errno) {
   echo "Failed to connect to MySQL :(<br>";
   echo $db->connect_error;
+  exit();
 }
 // Running queries
 // We use the method `prepare` to load an INSERT SQL statement in PHP.
